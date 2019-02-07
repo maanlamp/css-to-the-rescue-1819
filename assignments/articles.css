@@ -11,6 +11,8 @@
 
 body {
 	font-family: 'Noto Serif SC', serif;
+	padding: 0 10rem;
+	padding-bottom: 5rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -24,14 +26,30 @@ p+p:not(:last-of-type) {
 }
 
 li {
-	margin: 1rem 0;
+	margin: 1.5rem 0;
+}
+
+h1 {
+	font-size: 3rem;
+	font-weight: 100;
+}
+
+h2 {
+	font-size: 1.75rem;
+	font-weight: 100;
+}
+
+h3 {
+	font-size: 1rem;
+	font-weight: bold;
 }
 
 /* ------------------ SCREEN ----------------- */
 
 @media screen {
 	body {
-		max-width: 640px;
+		max-width: 60ch;
+		margin: auto;
 	}
 }
 
@@ -46,12 +64,12 @@ li {
 		page-break-after: avoid;
 	}
 
-	ul, ol, dl  {
+	ul, ol, dl {
 		page-break-before: avoid;
 	}
 
 	@page {
-		margin: 2cm 4cm;
+		margin: 2cm 0;
 	}
 
 	a[href^="#"], a[href^="./"] {
@@ -64,22 +82,33 @@ li {
 	}
 
 	a[href^="http"]:after {
-		content: "["attr(href)"]";
+		position: absolute;
+		content: attr(data-shortlink);
 		font-style: italic;
 		font-size: .75em;
 		display: inline-block;
 		text-decoration: none;
-		margin-left: .5em;
 		color: rgb(172, 172, 172);
+		left: 2rem;
+		width: 2.5cm;
+		text-indent: 0;
+		word-break: break-all;
+		line-height: 1rem;
+		margin-top: .25em;
+		max-height: 2.5rem;
+		overflow-y: hidden;
+		text-overflow: ellipsis;
 	}
 
-	video {
-		background-color: red;
-		display: block;
-		/*display thumbnail and src?*/
+	.no-print, video {
+		display: none;
 	}
 
 	figure {
 		margin: 1rem 0 1rem 3rem;
+	}
+
+	aside {
+		display: none;
 	}
 }
