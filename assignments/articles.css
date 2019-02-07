@@ -1,16 +1,85 @@
 /* Print stylesheet for a magazine */
-/* Two colours */
+/* ??? Two colours */
 /* Responds to battery level */
 /* Responsive without media queries */
 
+/* ------------------ GLOBAL ----------------- */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Noto Serif SC', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: sans-serif;
+	margin: 2.5em 0 1em 0;
+}
+
+p+p:not(:last-of-type) {
+	margin-top: 1.5rem;
+	text-indent: 3rem;
+}
+
+li {
+	margin: 1rem 0;
+}
+
+/* ------------------ SCREEN ----------------- */
+
+@media screen {
+	body {
+		max-width: 640px;
+	}
+}
+
+/* ------------------ PRINT ----------------- */
+
 @media print {
-	a, blockquote, table, pre, h1, h2, h3, h4, h5, h6, img {
+	li, figure, section, a, blockquote, table, pre, h1, h2, h3, h4, h5, h6, img, p {
     page-break-inside: avoid
 	}
+
 	h1, h2, h3, h4, h5, h6, img {
 		page-break-after: avoid;
 	}
+
 	ul, ol, dl  {
 		page-break-before: avoid;
+	}
+
+	@page {
+		margin: 2cm 4cm;
+	}
+
+	a[href^="#"], a[href^="./"] {
+		color: currentColor;
+		font-style: italic;
+	}
+
+	a[href^="http"] {
+		color: rgb(63, 36, 114);
+	}
+
+	a[href^="http"]:after {
+		content: "["attr(href)"]";
+		font-style: italic;
+		font-size: .75em;
+		display: inline-block;
+		text-decoration: none;
+		margin-left: .5em;
+		color: rgb(172, 172, 172);
+	}
+
+	video {
+		background-color: red;
+		display: block;
+		/*display thumbnail and src?*/
+	}
+
+	figure {
+		margin: 1rem 0 1rem 3rem;
 	}
 }
