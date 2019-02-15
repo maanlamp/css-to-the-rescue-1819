@@ -12,7 +12,7 @@
 <main>
 	<section>
 		<h1>Add nonsense</h1>
-		<p>Marijn is a software engineer. He can only use his left hand, and with that hand he has difficulty with fine motor control. This means typing can be hard for him. It’s even one of the reasons why he didn’t finish university. He had to write papers. Marijn is incredibly intelligent, so thinking up a paper is very easy. Yet typing it would take him ages.</p>
+		<header>Marijn is a software engineer. He can only use his left hand, and with that hand he has difficulty with fine motor control. This means typing can be hard for him. It’s even one of the reasons why he didn’t finish university. He had to write papers. Marijn is incredibly intelligent, so thinking up a paper is very easy. Yet typing it would take him ages.</header>
 		<p>Basically the problem he has with keyboard layouts is that not all keys are next to each other.</p>
 		<figure>
 			<img src="https://exclusive-design.vasilis.nl/images/marijn-was.jpg" alt="A keyboard with the letters W, A and S highlighted" />
@@ -27,13 +27,16 @@
 			<img src="https://exclusive-design.vasilis.nl/images/marijn-prototype.jpg" alt="A keyboard with the letters u, i, o, j, k, and l highlighted" />
 			<figcaption>What if you could type complete sentences by only using the u, i, o, j, k, and l keys?</figcaption>
 		</figure>
-		<p>And so he created a prototype where <a>with only six keys you can type common words.</a><a href="#fn-1" id="fnref-1" title="see footnote" class="footnote"><sup>1</sup></a> On this video you can see me typing the words <em>exclusive design</em>.</p>
-		<video controls>
-			<source src="https://exclusive-design.vasilis.nl/images/six-key.mp4" type="video/mp4">
-			<source src="https://exclusive-design.vasilis.nl/images/six-key.webm" type="video/webm">
-		</video>
+		<figure>
+			<video controls>
+				<source src="https://exclusive-design.vasilis.nl/images/six-key.mp4" type="video/mp4">
+				<source src="https://exclusive-design.vasilis.nl/images/six-key.webm" type="video/webm">
+			</video>
+			<figcaption>On this video you can see me typing the words <em>exclusive design</em>.</figcaption>
+		</figure>
+		<p>And so he created a prototype where <a>with only six keys you can type common words.</a><a href="#fn-1" id="fnref-1" title="see footnote" class="footnote"><sup>1</sup></a></p>
 	</section>
-	<section>
+	<section class="l-wacky">
 		<h2 id="allowingweirdideas">Allowing weird ideas</h2>
 		<p>At first Rick didn’t dare to mention his idea, let alone create a working prototype. When he first thought of it, it simply seemed too ridiculous. Only when I explicitly asked my students to come up with nonsensical ideas did he dare to make a prototype and test it.</p>
 		<p>When he first showed this prototype to Marijn, he had to laugh indeed. It looked so ridiculous and complicated, it didn&#8217;t seem to make any sense. Yet after trying it a few times he had to conclude that this might actually work. If you want to <a href="https://vasilisvg.github.io/six-key-typing/">you can try the prototype for yourself</a>.</p>
@@ -49,7 +52,7 @@
 		<p>Apart from a simple ideation tool to allow weird ideas, there are other reasons to use nonsense as well. Other reasons are lifting ideas beyond the obvious, breaking out of a single rusty context, exploring the unexpected, and of course having fun.</p>
 	</section>
 
-	<aside>
+	<aside class="l-wacky">
 		<h2>On a side note...</h2>
 		<h3 id="talkingdogs">Talking dogs</h3>
 		<p>An example of using nonsense to lift ideas beyond the obvious is this prototype of a talking dog. During my master research I organised a few Exclusive Design Challenges. Some of the more interesting ideas grew out of the <em>add nonsense</em> principle. Like this idea of smart glasses that give a blind person some information about the surroundings. This is a quite common idea, and <a>working implementations of this already exists.</a><a href="#fn-4" id="fnref-4" title="see footnote" class="footnote"><sup>4</sup></a> This team took this obvious idea to a next level by <a>attaching the speaker to the guide dog.</a><a href="#fn-5" id="fnref-5" title="see footnote" class="footnote"><sup>5</sup></a> All of a sudden all kinds of new possibilities and questions emerge. What’s the personality of the dog? Will the dog be able to tell persons who want to pet it that you really shouldn’t? Will it crack jokes? How will people react when they are being described by a talking dog? It would be so interesting, and so much fun, to explore this idea further.</p>
@@ -65,7 +68,6 @@
 		<p>Another idea that came out of this project was the idea to make screen readers laugh. It was the first time Hannes heard some emotion from his screen reader. It made me realise that even within the tight constraints of a screen reader, which sounds neutral and maybe even boring by design, we are able to add some emotion to our design.</p>
 		<p>This idea of making screen readers laugh resulted in the open database of strings that make different voices of different screen readers laugh. This database is funny, sure, but it is also a first step in trying to lift screen reader interaction beyond what Graham Pulling calls engineering, into the field of design. You are very welcome to contribute.</p>
 	</aside>
-
 
 	<section>
 		<h2 id="fun">Fun</h2>
@@ -185,7 +187,7 @@
 			</li>
 		</ol>
 	</section>
-	<section class="no-print">
+	<section id="meta" class="no-print">
 		<h3>Meta</h3>
 		<ul>
 			<li><a href="https://exclusive-design.vasilis.nl/thesaurus/">Glossary</a></li>
@@ -197,6 +199,17 @@
 	</section>
 </footer>
 <script>
+	function setBatteryLevel (percentage) {
+		const bg = "black"; //Calculate from percentage
+		const fg = "white"; //Calculate from percentage
+		document
+			.querySelectorAll("html, header, p, h2, h3, figcaption")
+			.forEach(element => {
+				element.style.color = fg;
+				element.style.backgroundColor = bg;
+			});
+	}
+
 	Array.from(document.querySelectorAll("a[href^='http']")).forEach(anchor => {
 		const id = [...Math.random().toString(16).slice(2, 8)].map(char => (Math.random() >= .5) ? char.toUpperCase() : char).join("");
 		anchor.dataset.shortlink = `shrtl.nk/${id}`;

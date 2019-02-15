@@ -1,6 +1,6 @@
 /* Print stylesheet for a magazine */
-/* ??? Two colours */
-/* Responds to battery level */
+/* use grid!!! */
+/* Two colours */
 /* Responsive without media queries */
 
 /* ------------------ GLOBAL ----------------- */
@@ -23,10 +23,6 @@ img, video {
 h1, h2, h3, h4, h5, h6 {
 	font-family: sans-serif;
 	margin: 2.5em 0 1em 0;
-}
-
-p+p:not(:last-of-type) {
-	text-indent: 3rem;
 }
 
 li {
@@ -60,10 +56,14 @@ figure {
 
 figure:nth-of-type(even) {
 	right: -12rem;
+} figure:nth-of-type(even)>img {
+	clip-path: polygon(62% 0, 100% 50%, 19% 91%, 0% 50%);
 }
 
 figure:nth-of-type(odd) {
 	left: -12rem;
+} figure:nth-of-type(odd)>img {
+	clip-path: polygon(23% 0, 100% 50%, 44% 100%, 0% 50%);
 }
 
 figure>figcaption {
@@ -74,14 +74,27 @@ figure>figcaption {
 	font-size: .8em;
 }
 
-aside {
-	background-color: #F9F9F9;
-	margin: 2rem -12rem;
-	padding: 4rem 36.66%;
+h1 + header {
+	font-size: 1.5rem;
+	margin-bottom: 3rem;
+	text-indent: 20vw;
 }
 
-aside h2 {
-	margin-top: 1rem;
+.l-wacky p+p, h2+p, h3+p {
+	position: relative;
+	margin: 2rem 0;
+}
+
+.l-wacky p+p:nth-of-type(even),
+.l-wacky h2+p:nth-of-type(even),
+.l-wacky h3+p:nth-of-type(even) {
+	left: -6rem;
+}
+
+.l-wacky p+p:nth-of-type(odd),
+.l-wacky h2+p:nth-of-type(odd),
+.l-wacky h3+p:nth-of-type(odd) {
+	right: -6rem;
 }
 
 /* ------------------ SCREEN ----------------- */
@@ -97,9 +110,25 @@ aside h2 {
 		margin-top: 5rem;
 	}
 
-	h1 {
-		background-color: rgb(68, 133, 255);
-		color: white;
+	#meta {
+		position: fixed;
+		top: 5rem;
+		left: 2rem;
+		background: #F9F9F9;
+		padding: 2rem 5rem;
+		text-align: center;
+	}
+
+	#meta h3 {
+		margin-top: 0;
+	}
+
+	#meta ul {
+		list-style: none;
+	}
+
+	#meta li {
+		margin: .5rem 0;
 	}
 }
 
@@ -153,6 +182,19 @@ aside h2 {
 		text-overflow: ellipsis;
 	}
 
+	.l-wacky p+p:nth-of-type(even) a[href^="http"]:before,
+	.l-wacky h2+p:nth-of-type(even) a[href^="http"]:before,
+	.l-wacky h3+p:nth-of-type(even) a[href^="http"]:before {
+		right: 2rem;
+		background: red;
+	}
+
+	.l-wacky p+p:nth-of-type(odd) a[href^="http"]:before,
+	.l-wacky h2+p:nth-of-type(odd) a[href^="http"]:before,
+	.l-wacky h3+p:nth-of-type(odd) a[href^="http"]:before {
+		left: -8rem;
+	}
+
 	figure {
 		margin: 1rem 0 1rem 3rem;
 	}
@@ -169,6 +211,10 @@ aside h2 {
 	h1 {
 		width: 145%;
 		letter-spacing: -15px;
+	}
+
+	h1 + header {
+		text-indent: 37.5vw;
 	}
 
 	figure:nth-of-type(even) {
