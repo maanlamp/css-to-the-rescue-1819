@@ -4,6 +4,8 @@
 /* Responsive without media queries */
 
 /* ------------------ GLOBAL ----------------- */
+@import url('https://fonts.googleapis.com/css?family=PT+Serif');
+
 * {
 	margin: 0;
 	padding: 0;
@@ -18,6 +20,10 @@ body {
 
 img, video {
 	width: 100%;
+}
+
+p {
+	line-height: 1.5rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -36,7 +42,7 @@ h1 {
 	margin: 5rem 0 1.5rem -5.5rem;
 	color: rgb(192, 192, 192);
 	word-break: break-all;
-	width: 131.5%;
+	width: 680px;
 }
 
 h2 {
@@ -56,14 +62,10 @@ figure {
 
 figure:nth-of-type(even) {
 	right: -12rem;
-} figure:nth-of-type(even)>img {
-	clip-path: polygon(62% 0, 100% 50%, 19% 91%, 0% 50%);
 }
 
 figure:nth-of-type(odd) {
 	left: -12rem;
-} figure:nth-of-type(odd)>img {
-	clip-path: polygon(23% 0, 100% 50%, 44% 100%, 0% 50%);
 }
 
 figure>figcaption {
@@ -80,19 +82,32 @@ h1 + header {
 	text-indent: 20vw;
 }
 
-.l-wacky p+p, h2+p, h3+p {
+.l-wacky p+p,
+.l-wacky h2,
+.l-wacky h2+p,
+.l-wacky h3,
+.l-wacky h3+p {
 	position: relative;
+}
+
+.l-wacky p+p,
+.l-wacky h2+p,
+.l-wacky h3+p {
 	margin: 2rem 0;
 }
 
 .l-wacky p+p:nth-of-type(even),
+.l-wacky h2:nth-of-type(even),
 .l-wacky h2+p:nth-of-type(even),
+.l-wacky h3:nth-of-type(even),
 .l-wacky h3+p:nth-of-type(even) {
 	left: -6rem;
 }
 
 .l-wacky p+p:nth-of-type(odd),
+.l-wacky h2:nth-of-type(odd),
 .l-wacky h2+p:nth-of-type(odd),
+.l-wacky h3:nth-of-type(odd),
 .l-wacky h3+p:nth-of-type(odd) {
 	right: -6rem;
 }
@@ -113,10 +128,16 @@ h1 + header {
 	#meta {
 		position: fixed;
 		top: 5rem;
-		left: 2rem;
+		left: -8rem;
 		background: #F9F9F9;
-		padding: 2rem 5rem;
-		text-align: center;
+		padding: 2rem 1rem 2rem 5rem;
+		text-align: right;
+		transition: left .2s ease;
+	}
+
+	#meta:hover {
+		left: 0rem;
+		padding: 2rem 1rem 2rem 5rem;
 	}
 
 	#meta h3 {
@@ -185,8 +206,7 @@ h1 + header {
 	.l-wacky p+p:nth-of-type(even) a[href^="http"]:before,
 	.l-wacky h2+p:nth-of-type(even) a[href^="http"]:before,
 	.l-wacky h3+p:nth-of-type(even) a[href^="http"]:before {
-		right: 2rem;
-		background: red;
+		margin-left: 28.5rem;
 	}
 
 	.l-wacky p+p:nth-of-type(odd) a[href^="http"]:before,
@@ -227,7 +247,26 @@ h1 + header {
 		width: 130%;
 	}
 
-	footer {
+	footer,
+	.box-swiss01 {
 		display: none;
 	}
+}
+
+.box-swiss01 {
+  fill: none;
+  stroke: rgba(0, 0, 0, .2);
+  stroke-width: 15px;
+	stroke-dasharray: 100px;
+	stroke-linecap: square;
+	animation: dash 5s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite alternate;
+	position: absolute;
+	width: 125vw;
+	margin-left: -14.5rem;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 500px;
+  }
 }
