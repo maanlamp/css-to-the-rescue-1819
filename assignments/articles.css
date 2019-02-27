@@ -1,7 +1,6 @@
 /* Print stylesheet for a magazine */
-/* use grid!!! */
-/* Two colours */
-/* Responsive without media queries */
+/* Responsive without media queries ✔️*/
+/* <=5kb css ✔️*/
 
 /* ------------------ GLOBAL ----------------- */
 @import url('https://fonts.googleapis.com/css?family=PT+Serif');
