@@ -55,31 +55,26 @@ h3 {
 	font-weight: bold;
 }
 
-figure {
+h1 + header {
+	font-size: 1.5rem;
+	margin-bottom: 3rem;
+	text-indent: 20vw;
+}
+
+.fig {
 	position: relative;
 	margin: 2rem 0;
-}
-
-figure:nth-of-type(even) {
+} .fig:nth-of-type(even) {
 	right: -12rem;
-}
-
-figure:nth-of-type(odd) {
+} .fig:nth-of-type(odd) {
 	left: -12rem;
-}
-
-figure>figcaption {
+} .fig>figcaption {
 	width: 85%;
 	margin: 0 auto;
 	color: rgb(120, 120, 120);
 	font-style: italic;
 	font-size: .8em;
-}
-
-h1 + header {
-	font-size: 1.5rem;
-	margin-bottom: 3rem;
-	text-indent: 20vw;
+	text-shadow: 0 0 1px white;
 }
 
 .l-wacky p+p,
@@ -133,22 +128,14 @@ h1 + header {
 		padding: 2rem 1rem 2rem 5rem;
 		text-align: right;
 		transition: left .2s ease;
-	}
-
-	#meta:hover {
+	} #meta:hover {
 		left: 0rem;
 		padding: 2rem 1rem 2rem 5rem;
-	}
-
-	#meta h3 {
+	} #meta h3 {
 		margin-top: 0;
-	}
-
-	#meta ul {
+	} #meta ul {
 		list-style: none;
-	}
-
-	#meta li {
+	} #meta li {
 		margin: .5rem 0;
 	}
 }
@@ -183,9 +170,7 @@ h1 + header {
 
 	a[href^="http"] {
 		color: rgb(63, 36, 114);
-	}
-
-	a[href^="http"]:before {
+	} a[href^="http"]:before {
 		position: absolute;
 		content: attr(data-shortlink);
 		letter-spacing: -1px;
@@ -193,7 +178,7 @@ h1 + header {
 		display: inline-block;
 		color: currentColor;
 		left: 2.25rem;
-		width: 3cm;
+		width: 3.5cm;
 		text-indent: 0;
 		word-break: break-all;
 		line-height: 1rem;
@@ -231,24 +216,19 @@ h1 + header {
 	h1 {
 		width: 145%;
 		letter-spacing: -15px;
-	}
-
-	h1 + header {
+	} h1 + header {
 		text-indent: 37.5vw;
 	}
 
-	figure:nth-of-type(even) {
+	.l-wacky .fig:nth-of-type(even) {
 		left: -3rem;
 		width: 135%;
-	}
-	
-	figure:nth-of-type(odd) {
+	} .l-wacky .fig:nth-of-type(odd) {
 		left: -13rem;
 		width: 130%;
 	}
 
-	footer,
-	.box-swiss01 {
+	footer {
 		display: none;
 	}
 }
@@ -259,14 +239,46 @@ h1 + header {
   stroke-width: 15px;
 	stroke-dasharray: 100px;
 	stroke-linecap: square;
-	animation: dash 5s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite alternate;
 	position: absolute;
 	width: 125vw;
 	margin-left: -14.5rem;
+} .box-swiss01 .rect-swiss01 {
+	animation: dash 13s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite alternate;
+} .box-swiss01 .rect-swiss02 {
+	transform: translate(50px, 50px);
+	animation: dash 7s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite alternate;
+} @keyframes dash {
+	0% {
+		stroke: rgba(17, 9, 48, .5);
+	} 33% {
+		stroke: rgba(134, 22, 87, .5);
+	} 66% {
+		stroke: rgba(83, 173, 162, .5);
+	}
+  100% {
+		stroke-dashoffset: 500px;
+		stroke: rgba(255, 177, 33, .5);
+  }
 }
 
-@keyframes dash {
-  to {
-    stroke-dashoffset: 500px;
-  }
+.circle-swiss01 {
+	fill: none;
+  stroke: rgba(0, 0, 0, .2);
+  stroke-width: 5px;
+	position: absolute;
+	left: 0;
+} .circle-swiss01>circle {
+	animation: pulse 10s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite alternate;
+} @keyframes pulse {
+	0% {
+		r: 0;
+		stroke: rgba(144, 216, 229, .5);
+	} 50% {
+		r: 100;
+		stroke: rgba(250, 29, 64, .5);
+	} 100% {
+		r: 25;
+		stroke-width: 50px;
+		stroke: rgba(183, 244, 207, .5);
+	}
 }
