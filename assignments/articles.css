@@ -34,7 +34,7 @@ li {
 	margin: 1.5rem 0;
 }
 
-h1 {
+.bigheading {
 	font-size: 20rem;
 	font-weight: 900;
 	line-height: .45em;
@@ -54,7 +54,7 @@ h3 {
 	font-weight: bold;
 }
 
-h1 + header {
+.bigheading + header {
 	font-size: 1.5rem;
 	margin-bottom: 3rem;
 	text-indent: 20vw;
@@ -190,7 +190,7 @@ h1 + header {
 	.l-wacky p+p:nth-of-type(even) a[href^="http"]:before,
 	.l-wacky h2+p:nth-of-type(even) a[href^="http"]:before,
 	.l-wacky h3+p:nth-of-type(even) a[href^="http"]:before {
-		margin-left: 28.5rem;
+		margin-left: 37rem;
 	}
 
 	.l-wacky p+p:nth-of-type(odd) a[href^="http"]:before,
@@ -212,10 +212,11 @@ h1 + header {
 		display: none;
 	}
 
-	h1 {
-		width: 145%;
+	.bigheading {
+		width: 115%;
 		letter-spacing: -15px;
-	} h1 + header {
+		margin-left: -2rem;
+	} .bigheading + header {
 		text-indent: 37.5vw;
 	}
 
@@ -229,6 +230,13 @@ h1 + header {
 
 	footer {
 		display: none;
+	}
+
+	.l-wacky .box-swiss01 .rect-swiss01,
+	.l-wacky .box-swiss01 .rect-swiss02,
+	.l-wacky .circle-swiss01 circle {
+		stroke: rgba(0, 0, 0, .1);
+		animation: none;
 	}
 }
 
