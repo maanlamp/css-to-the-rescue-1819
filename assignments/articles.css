@@ -237,6 +237,10 @@ h3 {
 	.l-wacky .circle-swiss01 circle {
 		stroke: rgba(0, 0, 0, .1);
 		animation: none;
+	} .l-wacky .circle-swiss01 circle {
+		r: 75px;
+	} .l-wacky .box-swiss01 .rect-swiss02 {
+		transform: translate(100px, 50px);
 	}
 }
 
@@ -255,16 +259,8 @@ h3 {
 	transform: translate(50px, 50px);
 	animation: dash 7s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite alternate;
 } @keyframes dash {
-	0% {
-		stroke: rgba(17, 9, 48, .5);
-	} 33% {
-		stroke: rgba(134, 22, 87, .5);
-	} 66% {
-		stroke: rgba(83, 173, 162, .5);
-	}
-  100% {
+	to {
 		stroke-dashoffset: 500px;
-		stroke: rgba(255, 177, 33, .5);
   }
 }
 
@@ -279,13 +275,10 @@ h3 {
 } @keyframes pulse {
 	0% {
 		r: 0;
-		stroke: rgba(144, 216, 229, .5);
 	} 50% {
 		r: 100;
-		stroke: rgba(250, 29, 64, .5);
 	} 100% {
 		r: 25;
 		stroke-width: 50px;
-		stroke: rgba(183, 244, 207, .5);
 	}
 }
